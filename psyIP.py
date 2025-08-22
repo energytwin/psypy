@@ -351,6 +351,10 @@ def __WBT_DBT_W_P(DBT, W, P):
         WBT=(WBTa+WBTb)/2
         while WBTb-WBTa>TOL:
             Ws=__W_DBT_WBT_P(DBT, WBT, P)
+            if Ws is None:
+                # ET hack, see https://github.com/longapalooza/psypy/issues/2
+                WBT=(WBTa+WBTb)/2
+                return WBT            
             if W>Ws:
                 WBTa=WBT
             else:
