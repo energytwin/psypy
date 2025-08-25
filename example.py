@@ -1,5 +1,5 @@
 # import the psypy modules, psySI for SI units and psyIP for IP units.
-import psySI as SI
+from src.psypy import psySI as SI
 
 # The main function to be used is the state function.
 
